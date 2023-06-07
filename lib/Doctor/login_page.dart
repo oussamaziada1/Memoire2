@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../Driver/homepage.dart';
+import '../Patient/home.dart';
 import '../utilities/constants.dart';
 import 'homepage.dart';
 import 'signup_page.dart';
@@ -34,12 +36,27 @@ class _LoginScreenState extends State<LoginScreen> {
                         decoration: kBoxDecorationStyle,
                         height: 60.0,
                         child: TextFormField(
-                            validator: (value) {
-                            if (value == null || value.isEmpty) {
-                            return 'Please enter your e-mail';
-                            }
-                            return null;
-                            },
+                            validator: (value){
+            if (value == null || value.isEmpty) {
+              return 'Please enter your e-mail';
+            } else if (value == 'ziadaoussama@gmail.com') {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MainHomePage()),
+              );
+            } else if (value == 'farsiahmed@gmail.com') {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomeScreen()),
+              );
+            } else if (value == 'joebeeb@gmail.com') {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DriverDashboardScreen()),
+              );
+            }
+            return null;
+          },
                           keyboardType: TextInputType.emailAddress,
                           style: TextStyle(color: Colors.white),                         
                           decoration: InputDecoration(
@@ -164,11 +181,13 @@ class _LoginScreenState extends State<LoginScreen> {
         
         {
     // Validate returns true if the form is valid, or false otherwise.
-    if (_formKey.currentState!.validate()) {
+   if (_formKey.currentState!.validate()) {
       // If the form is valid, display a snackbar. In the real world,
       // you'd often call a server or save the information in a database.
-      Navigator.push(context, new MaterialPageRoute(builder: (context) => MainHomePage()));
+
     }
+
+
   };
         },
         

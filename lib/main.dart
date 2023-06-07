@@ -21,7 +21,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () =>  DriverDashboardScreen()),
+        GetPage(name: '/', page: () =>  OnboardingScreenHomecare()),
         GetPage(name: '/addpage', page: () => const Addpage()),
       ],
     );
