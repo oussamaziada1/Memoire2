@@ -54,8 +54,8 @@ class _AddpageState extends State<Addpage> {
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
                             color: Colors.black)),
-              Muinput(title:"Medcine" ,hint:"Enter your title " ,controller: _titleController,),
-              Muinput(title:"Program" ,hint:"Enter your note " ,controller: _noteController,),
+              Muinput(title:"Medecine" ,hint:"Enter your medicine name " ,controller: _titleController,),
+              Muinput(title:"Program" ,hint:"Enter your medecine use program" ,controller: _noteController,),
               Muinput(title:"Date" ,hint:DateFormat.yMd().format(_selectedDate),
               widget:
                IconButton(

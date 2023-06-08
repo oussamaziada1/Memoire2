@@ -44,7 +44,7 @@ class _RemindersState extends State<Reminders> {
                 height: 55,
                 child: Text(
                   'Edit ',
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
                 ),
               ),
             ),
@@ -69,7 +69,7 @@ class _RemindersState extends State<Reminders> {
                 height: 50,
                 child: Text(
                   'Cancel ',
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold, color: Colors.white),
                 ),
               ),
             ),
@@ -85,7 +85,7 @@ class _RemindersState extends State<Reminders> {
                 decoration: BoxDecoration(
                   border: Border.all(
                     width: 2,
-                    color: Colors.grey
+                    color: Color.fromARGB(255, 245, 245, 245)
                   ),
                   color: Color.fromARGB(255, 199, 199, 199),
                   borderRadius: BorderRadius.circular(20),
@@ -94,7 +94,7 @@ class _RemindersState extends State<Reminders> {
                 height: 50,
                 child: Text(
                   'Close',
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
                 ),
               ),
             ),
@@ -194,7 +194,7 @@ class _RemindersState extends State<Reminders> {
                 width: 80,
                 initialSelectedDate: DateTime.now(),
                 selectedTextColor: Colors.white,
-                selectionColor: Colors.blue,
+                selectionColor: Color(0xFF398AE5),
                 dateTextStyle: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
@@ -237,8 +237,8 @@ Widget buildAppointmentContainer(BuildContext context) {
     alignment: Alignment.topRight,
     children: [
       Positioned(
-        top: 15,
-        right: 15,
+        top: 27,
+        right: 37,
         child: Image(
           image: AssetImage("assets/capsule22.png"),
           width: 24,
@@ -247,7 +247,7 @@ Widget buildAppointmentContainer(BuildContext context) {
       ),
       Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 38),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -271,7 +271,7 @@ Widget buildAppointmentContainer(BuildContext context) {
               Row(
                 children: [
                   Container(
-                    width: 100,  // Adjust the width as needed
+                    width: 120,  // Adjust the width as needed
                     height: 30,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(7),
@@ -283,10 +283,10 @@ Widget buildAppointmentContainer(BuildContext context) {
                     ),
                     child: Center(
                       child: Text(
-                        'Before Eating',
+                        ' Before Eating ',
                         style: TextStyle(
                           fontSize: 16,
-                          color: Color.fromARGB(255, 250, 82, 69),
+                          color: Color.fromARGB(183, 241, 16, 0),
                         ),
                       ),
                     ),
@@ -301,7 +301,7 @@ Widget buildAppointmentContainer(BuildContext context) {
                     ),
                     child: Center(
                       child: Text(
-                        'Breakfast',
+                         ' Breakfast ',
                         style: TextStyle(
                           fontSize: 16,
                           color: Color.fromARGB(255, 139, 136, 136),
@@ -315,7 +315,7 @@ Widget buildAppointmentContainer(BuildContext context) {
                       height: 30,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(7),
-                        color: Color.fromARGB(255, 101, 185, 253),
+                        color:  Color(0xFF478FE0),
                       ),
                       child: GestureDetector(
                         onTap: () {
@@ -329,7 +329,7 @@ Widget buildAppointmentContainer(BuildContext context) {
                         child: Center(
                           child: Text(
                             'View Details',
-                            style: TextStyle(fontSize: 16, color: Colors.black),
+                            style: TextStyle(fontSize: 16, color: Colors.white),
                           ),
                         ),
                       ),
@@ -458,7 +458,8 @@ Widget buildBottomSheetContent() {
                   height: 50,
                   child: Text(
                     'Close',
-                    style: TextStyle(fontSize: 18),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,
+                    color: Colors.white),
                   ),
                 ),
               ),
