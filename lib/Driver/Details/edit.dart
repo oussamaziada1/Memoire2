@@ -42,7 +42,7 @@ class _EditProfilePage3State extends State<EditProfilePage3> {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                  image: AssetImage('assets/cover3.jpg'),
+                  image: AssetImage('assets/avatar.png'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -56,38 +56,32 @@ class _EditProfilePage3State extends State<EditProfilePage3> {
           const SizedBox(height: 24),
           TextFieldWidget(
             label: 'Full Name',
-            text: user.name,
+            text: 'Joebeeb',
             onChanged: (name) {},
           ),
           const SizedBox(height: 24),
           TextFieldWidget(
             label: 'Email',
-            text: user.email,
+            text: 'joebeeb@gmail.com',
             onChanged: (email) {},
           ),
           const SizedBox(height: 24),
-          TextFieldWidget(
-            label: 'Description',
-            text: user.description,
-            maxLines: 5,
-            onChanged: (about) {},
-          ),
-          const SizedBox(height: 24),
+         
           TextFieldWidget(
             label: 'Address',
-            text: user.address,
+            text: 'Nouvelle ville Ali mendjli constantine, Constantine',
             onChanged: (address) {},
           ),
           const SizedBox(height: 24),
           TextFieldWidget(
             label: 'Phone number',
-            text: user.phoneNumber,
+            text: '+213656672495',
             onChanged: (phoneNumber) {},
           ),
           const SizedBox(height: 24),
           TextFieldWidget(
             label: 'Birthdate',
-            text: user.birthdate,
+            text: '31/05/1990',
                  
                   onChanged: (birthdate) {},
                 ),

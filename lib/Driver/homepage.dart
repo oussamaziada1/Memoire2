@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:memoire/Patient/home.dart';
 
+import '../widgets/circle_button.dart';
 import 'details/Upcoming_Appointments.dart';
 import 'details/appoinment_mange.dart';
 import 'details/profile.dart';
@@ -28,65 +29,68 @@ class _DriverDashboardScreenState extends State<DriverDashboardScreen>
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                        const EdgeInsets.symmetric(horizontal: 0, vertical: 20),
                     child: Container(
                       height: 200,
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: Color(0xFF398AE5),
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      padding: EdgeInsets.all(8),
+                      
                       child: Row(
                         children: [
                            Expanded(
                       child: Image(image: AssetImage("assets/drive_safe.png"),width: 200,
-                        height: 200,)
+                        height: 210,)
                         
                         
                     ),
                           SizedBox(width: 12),
                           Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'The road awaits, drive responsibly',
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                SizedBox(height: 16),
-                                Text(
-                                  'Safe driving is our priority, lets protect lives on the road',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                SizedBox(height: 16),
-                                ElevatedButton(
-                                  child: Text(
-                                    'Appointments',
-                                    style: TextStyle(fontSize: 18),
-                                  ),
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => NotificationsScreen()),
-                                    );
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(12),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'The road awaits, drive responsibly',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
                                     ),
-                                    backgroundColor: Color(0xFF73AEF5),
-                                    fixedSize: Size.fromHeight(30),
                                   ),
-                                ),
-                              ],
+                                  SizedBox(height: 16),
+                                  Text(
+                                    'Safe driving is our priority, lets protect lives on the road',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  SizedBox(height: 12),
+                                  ElevatedButton(
+                                    child: Text(
+                                      'Appointments',
+                                      style: TextStyle(fontSize: 18),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => NotificationsScreen()),
+                                      );
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      backgroundColor:    Color(0xFF61A4F1),
+                                      fixedSize: Size.fromHeight(30),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],
@@ -95,23 +99,22 @@ class _DriverDashboardScreenState extends State<DriverDashboardScreen>
                   ),
                 ],
               ),
-              Divider(
-                thickness: 0.2,
-                color: Colors.black,
-              ),
+            
               Text(
-                'Urgent Appointments',
+                'My appointments',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              SizedBox(height: 10,),
               Container(
                 height: 1000,
-                child: ListView.builder(
-                  itemCount: 2,
-                  itemBuilder: (context, index) {
-                    return InkWell(
+                child: ListView(
+                  shrinkWrap: true,
+                  children: [
+                    
+                    InkWell(
                       onTap: () {
                         showModalBottomSheet(
                           context: context,
@@ -120,82 +123,194 @@ class _DriverDashboardScreenState extends State<DriverDashboardScreen>
                           },
                         );
                       },
-                      child: Container(
-                        margin: EdgeInsets.only(top: 10, left: 20),
-                        height: 120,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Color.fromARGB(255, 240, 238, 238),
-                            width: 1.0,
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom:5.0, top: 6.0),
+                        child: Container(
+                          
+                          height: 120,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Color.fromARGB(255, 240, 238, 238),
+                              width: 1.0,
+                            ),
+                            color: Color.fromARGB(255, 229, 235, 238),
+                            borderRadius: BorderRadius.circular(12),
                           ),
-                          color: Color.fromARGB(255, 229, 235, 238),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                     Expanded(
-                                    child: Image(
-                                      image: AssetImage("assets/eaamb.png"),
-                                      width: 80,
-                                      height: 80,) ),
-                                  ],
-                                ),
-                              ),
-                              VerticalDivider(
-                                width: 1,
-                                color: Colors.black,
-                                endIndent: 10,
-                                indent: 10,
-                              ),
-                              SizedBox(width: 10),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SizedBox(height: 7),
-                                  Text(
-                                    'Nursing Appointments',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                  SizedBox(height: 7),
-                                  Text(
-                                    '25 rue Larbi Ben Mhidi, 31000, Oran',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 15,
-                                    ),
-                                  ),
-                                  SizedBox(height: 7),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          child: Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
+                                       Expanded(
+                                      child: Image(
+                                        image: AssetImage("assets/eaamb.png"),
+                                        width: 80,
+                                        height: 80,) ),
+                                        Text('08:00', style:
+                                        TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 19,
+                                          letterSpacing: 1.1
+                                        ))
+                                    ],
+                                  ),
+                                ),
+                                VerticalDivider(
+                                  width: 1,
+                                  color: Colors.black,
+                                  endIndent: 5,
+                                  indent: 5,
+                                ),
+                                
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(height: 7),
                                       Text(
-                                        'specialInstructions: Bring wheelchair',
+                                        'Nursing Appointment',
                                         style: TextStyle(
-                                          fontSize: 15,
                                           color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20,
                                         ),
+                                      ),
+                                      SizedBox(height: 7),
+                                      Text(
+                                        'Cité 1200 bt 60, 25100, El Khroub',
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 15.5,
+                                        ),
+                                      ),
+                                      SizedBox(height: 7),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            'Passengers: Nurse1, Nurse2',
+                                            style: TextStyle(
+                                              fontSize: 15.5,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ],
                                   ),
-                                ],
-                              ),
-                            ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    );
-                  },
+                    ),
+
+InkWell(
+                      onTap: () {
+                        showModalBottomSheet(
+                          context: context,
+                          builder: (context) {
+                            return BottomSheetContent();
+                          },
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom:5.0, top: 6.0),
+                        child: Container(
+                          
+                          height: 120,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Color.fromARGB(255, 240, 238, 238),
+                              width: 1.0,
+                            ),
+                            color: Color.fromARGB(255, 229, 235, 238),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                       Expanded(
+                                      child: Image(
+                                        image: AssetImage("assets/eaamb.png"),
+                                        width: 80,
+                                        height: 80,) ),
+                                        Text('10:00', style:
+                                        TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 19,
+                                          letterSpacing: 1.1
+                                        ))
+                                    ],
+                                  ),
+                                ),
+                                VerticalDivider(
+                                  width: 1,
+                                  color: Colors.black,
+                                  endIndent: 5,
+                                  indent: 5,
+                                ),
+                                
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(height: 7),
+                                      Text(
+                                        'Cardiologist Appointment',
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                      SizedBox(height: 7),
+                                      Text(
+                                        'Cité 1200 bt 60, 25100, El Khroub',
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 15.5,
+                                        ),
+                                      ),
+                                      SizedBox(height: 7),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            'Passengers: Doctor1',
+                                            style: TextStyle(
+                                              fontSize: 15.5,
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+
+
+
+                  ],
                 ),
               ),
             ],
@@ -215,6 +330,7 @@ class _DriverDashboardScreenState extends State<DriverDashboardScreen>
                 );
               },
               child: Icon(Icons.library_books_rounded),
+              backgroundColor:Color(0xFF398AE5),
             ),
           ),
         ],
@@ -235,7 +351,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       padding:  EdgeInsets.only(top: 50, left: 20, right: 20),
       height: 110,
       width: double.infinity,
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(20),
           bottomRight: Radius.circular(20),
@@ -257,7 +373,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Welcome Driver',
+                'Welcome!',
                 style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -265,27 +381,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   fontSize: 24.0,
                 ),
               ),
-            IconButton(
-                icon: Image.asset(
-                  'assets/utilisateur.png',
-                  width: 60,
-                  height: 60,
-                  // Add other properties as needed
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ProfileScreen01()),
-                  );
-                },
-              ),
+          
              
               
-              // CircleButton(
-              //   icon: Icons.notifications,
-              //   onPressed: () {},
-              // ),
-              SizedBox(width: 35,)
+              CircleButton(
+                icon: Icons.notifications,
+                onPressed: () {},
+              ),
+              
             ],
           ),
           const SizedBox(height: 0),
@@ -302,6 +405,7 @@ class BottomSheetContent extends StatelessWidget {
       child: Column(
         children: [
           Column(
+            
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 10),
@@ -317,11 +421,11 @@ class BottomSheetContent extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 16,),
+          SizedBox(height: 5,),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 38),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   'Specialist: Nursing',
@@ -330,15 +434,15 @@ class BottomSheetContent extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                SizedBox(height: 7,),
+                SizedBox(height: 5,),
                 Text(
-                  'Patient Name: Mohamed Berkani',
+                  'Passengers: Nurse1, Nurse2',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                SizedBox(height: 7,),
+                SizedBox(height: 5,),
                 Text(
                   'Address:',
                   style: TextStyle(
@@ -348,28 +452,22 @@ class BottomSheetContent extends StatelessWidget {
                 ),
                 SizedBox(height: 7,),
                 Text(
-                  '25 rue Larbi Ben Mhidi, 31000, Oran',
+                  'Cité 1200 bt 60, 25100, El Khroub',
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.grey,
                   ),
                 ),
                 SizedBox(height: 7,),
-                Text(
-                  "Special Instructions: Bring wheelchair",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
+                
                 SizedBox(height: 7,),
                 Stack(
                   alignment: Alignment.bottomRight,
                   children: [
                   Image(
                     image: AssetImage("assets/map03.png"),
-                        width: 500,
-                        height: 200,),
+                        width: 350,
+                        height: 150,),
                     Padding(
                       padding: const EdgeInsets.only(right: 30),
                       child: GestureDetector(
@@ -416,11 +514,13 @@ class BottomSheetContent extends StatelessWidget {
                         height: 50,
                         child: Text(
                           'Report',
-                          style: TextStyle(fontSize: 18),
+                          style: TextStyle(fontSize: 18, 
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
                         ),
                       ),
                     ),
-                    SizedBox(width: 16,),
+                    SizedBox(width: 15,),
                     GestureDetector(
                       onTap: () {
                         // Handle edit appointment button press
@@ -432,16 +532,19 @@ class BottomSheetContent extends StatelessWidget {
                         decoration: BoxDecoration(
                           border: Border.all(
                             width: 2,
-                            color: Color.fromARGB(255, 54, 152, 244)
+                            color: Color(0xFF478FE0),
                           ),
-                          color: Colors.blue,
+                          color: Color(0xFF398AE5),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         alignment: Alignment.center,
                         height: 50,
                         child: Text(
                           'Completed',
-                          style: TextStyle(fontSize: 18),
+                          style: TextStyle(fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white
+                          ),
                         ),
                       ),
                     ),

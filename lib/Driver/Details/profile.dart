@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter/services.dart';
+import 'package:memoire/Driver/driver_homepage.dart';
 import '../../Patient/Specialist.dart';
 import '../../models/user.dart';
 import '../../utilities/user_pref.dart';
@@ -68,9 +69,9 @@ class CustomAppBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
-                icon: Icon(Icons.arrow_back),
+                icon: Icon(Icons.arrow_back, color: Colors.white,),
                 onPressed: () {
-                  Navigator.pop(context); // Go back to the previous page
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => DriverHomepage() ));
                 },
               ),
               Text(
@@ -127,26 +128,6 @@ class _ProfileScreen01BodyState extends State<ProfileScreen01Body> {
           ],
         )),
 
-        const SizedBox(height: 10),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 35),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Title',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 8),
-              Text(
-                "Driver",
-                style: TextStyle(fontSize: 16, height: 1.4),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(height: 10),
-        Divider(height: 10, color: Colors.black54, endIndent: 20, indent: 20,),
         const SizedBox(height: 10),
         buildGender(user),
         const SizedBox(height: 10),
@@ -208,7 +189,7 @@ class _ProfileScreen01BodyState extends State<ProfileScreen01Body> {
             ],
                  ),
          ),
-        Divider(height: 10, color: Colors.black54, endIndent: 20, indent: 20,),
+      
         const SizedBox(height: 10),
       
       ],
@@ -226,13 +207,11 @@ class _ProfileScreen01BodyState extends State<ProfileScreen01Body> {
 
   Widget buildName(User user) => Column(
         children: [
-          Text(
-            user.name,
+          Text('Joebeeb',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
           ),
           SizedBox(height: 4),
-          Text(
-            user.email,
+          Text('joebeeb@gmail.com',
             style: TextStyle(color: Colors.grey),
           )
         ],

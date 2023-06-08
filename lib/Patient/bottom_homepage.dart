@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memoire/Doctor/setting_ui.dart';
 
 import 'Reminder.dart';
 
@@ -15,10 +16,10 @@ class Patient extends StatefulWidget {
 class _PatientState extends State<Patient> {
   int _selectedIndex = 0;
   static  List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
-    
+    HomeScreen(),  
     Reminders(),
     ProfileScreen(),
+    SettingsUI()
   ];
 
   @override
@@ -56,6 +57,11 @@ class _PatientState extends State<Patient> {
               activeIcon: Icon(Icons.person, size: 27.0),
               icon: Icon(Icons.person_outline, size: 27.0),
               label: 'Profile',
+            ),
+            BottomNavigationBarItem(
+              activeIcon: Icon(Icons.settings, size: 27.0),
+              icon: Icon(Icons.settings_outlined, size: 27.0),
+              label: 'Settings',
             ),
           ],
         ),

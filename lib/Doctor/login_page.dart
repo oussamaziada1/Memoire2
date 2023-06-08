@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:memoire/Driver/driver_homepage.dart';
 
 import '../Driver/homepage.dart';
 import '../Patient/home.dart';
@@ -53,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
             } else if (value == 'joebeeb@gmail.com') {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => DriverDashboardScreen()),
+                MaterialPageRoute(builder: (context) => DriverHomepage()),
               );
             }
             return null;
