@@ -43,7 +43,7 @@ class _EditProfilePage2State extends State<EditProfilePage2> {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                  image: AssetImage('assets/cover3.jpg'),
+                  image: AssetImage('assets/avatar.png'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -57,38 +57,32 @@ class _EditProfilePage2State extends State<EditProfilePage2> {
           const SizedBox(height: 24),
           TextFieldWidget(
             label: 'Full Name',
-            text: user.name,
+            text: 'Farsi Ahmed',
             onChanged: (name) {},
           ),
           const SizedBox(height: 24),
           TextFieldWidget(
             label: 'Email',
-            text: user.email,
+            text: 'farsiahmed@gmail.com',
             onChanged: (email) {},
           ),
           const SizedBox(height: 24),
-          TextFieldWidget(
-            label: 'Description',
-            text: user.description,
-            maxLines: 5,
-            onChanged: (about) {},
-          ),
-          const SizedBox(height: 24),
+        
           TextFieldWidget(
             label: 'Address',
-            text: user.address,
+            text: 'Somewhere, Khenchela',
             onChanged: (address) {},
           ),
           const SizedBox(height: 24),
           TextFieldWidget(
             label: 'Phone number',
-            text: user.phoneNumber,
+            text: '+213556639907',
             onChanged: (phoneNumber) {},
           ),
           const SizedBox(height: 24),
           TextFieldWidget(
             label: 'Birthdate',
-            text: user.birthdate,
+            text: '31/05/2002',
                  
                   onChanged: (birthdate) {},
                 ),

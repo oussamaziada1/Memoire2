@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:memoire/Patient/profile/profile.dart';
 
 
 
@@ -17,7 +18,7 @@ class _Medical_FolderState extends State<Medical_Folder> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         leading: IconButton(onPressed: (){
-          //  Navigator.push(context,MaterialPageRoute(builder: (context) => PatientProfile2()));
+           Navigator.push(context,MaterialPageRoute(builder: (context) => ProfileScreen()));
         }, icon: Icon(Icons.arrow_back, color: Colors.white,)),
       ),
       body: InteractiveViewer(child: Image(image: AssetImage("assets/Sample.png")),
