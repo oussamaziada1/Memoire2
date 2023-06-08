@@ -33,16 +33,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 decoration: BoxDecoration(
                   border: Border.all(
                     width: 2,
-                    color: Colors.blue
+                    color: Color(0xFF398AE5),
                   ),
-                  color: Colors.lightBlue,
+                  color:  Color(0xFF478FE0),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 alignment: Alignment.center,
                 height: 55,
                 child: Text(
                   'Edit Appointment',
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
+                  
                 ),
               ),
             ),
@@ -67,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 50,
                 child: Text(
                   'Cancel Appointment',
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 18 ,color: Colors.white, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
@@ -92,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 50,
                 child: Text(
                   'Close',
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
@@ -115,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Container(
                 height: 180,
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color:   Color(0xFF398AE5),
                   borderRadius: BorderRadius.circular(12)
                  ),
                 
@@ -133,15 +134,18 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'Get the Care You Deserve!',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
+                          Padding(
+                            padding: const EdgeInsets.only(top: 6.0),
+                            child: Text(
+                              'Get the Care You Deserve!',
+                              style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
-                          SizedBox(height: 16),
+                          SizedBox(height: 10),
                           Text(
                             'Plan Your Visit in a Few Clicks right now  ',
                             style: TextStyle(
@@ -172,7 +176,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 borderRadius: BorderRadius.circular(12),
                               
                               ),
-                              backgroundColor: Color(0xFF73AEF5),
+                              backgroundColor: Color(0xFF61A4F1),
                               fixedSize: Size.fromHeight(30),
                               
                             ),
@@ -201,38 +205,37 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: 80,
                 initialSelectedDate: DateTime.now(),
                 selectedTextColor: Colors.white,
-                selectionColor: Colors.blue,
+                selectionColor:  Color(0xFF398AE5),
                 dateTextStyle: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
-                  color: Colors.grey
+                  color: Colors.black45,
                 ),
                 monthTextStyle: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
-                  color: Colors.grey
+                  color: Colors.black45,
                 ),
                 dayTextStyle: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
-                  color: Colors.grey
+                  color: Colors.black45,
                 ),
                 onDateChange: (date) {
                   _selectedDate=date;
                 },
                )),
-             ListView.builder(
-              shrinkWrap: true,
-              itemCount: 3,
-              itemBuilder: (context, index) {
-                return Padding( 
-                  padding:EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+             ListView(
+            shrinkWrap: true,
+           children: [
+              Padding( 
+                  padding:EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   
                   child: GestureDetector(
                     onTap: _showBottomSheet,
                     child: Container(
-                      margin: EdgeInsets.only(top:0,left: 20),
-                              height: 100,        
+                     
+                              height: 125,        
                               decoration: BoxDecoration(
                               color: Color.fromARGB(255, 229, 235, 238),
                               borderRadius: BorderRadius.circular(12),         
@@ -245,26 +248,30 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.all(8.0),
                         child: Column(mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('10:00', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),),
-                            SizedBox(height: 5,),
-                            Text('6/6/2023', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text('10:00', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24, letterSpacing: 1.1),),
+                            ),
+                         
                           ],
                           ),
                       ),
                         
-                      VerticalDivider(width:1, color: Colors.black,endIndent: 10, indent: 10, ),
+                      VerticalDivider(width:1, color: Colors.black,endIndent: 5, indent: 5, ),
                       SizedBox(width: 10,),
                       Column( crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(height: 7,),
-                          Text('Dentist', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),),
+                          Text('Dentist appointment:', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),),
                           SizedBox(height: 7,),
-                          Text('25 rue Larbi Ben Mhidi, 31000, Oran', style: TextStyle(color: Colors.black,  fontSize: 15),),
+                          Text('Doctor: Hakim Bouchiba', style: TextStyle(color: Colors.black,  fontSize: 15),),
+                          SizedBox(height: 7,),
+                          Text('Waiting', style: TextStyle(color: Colors.amber[700], fontWeight: FontWeight.bold, fontSize: 17),),
                           SizedBox(height: 7,),
                           Row(
                           children: [
                           Text(
-                          'specialInstructions: Bring wheelchair',
+                          'Notes: none',
                           style: TextStyle(
                             
                             fontSize: 15,
@@ -284,8 +291,147 @@ class _HomeScreenState extends State<HomeScreen> {
                                ),
                     ),
                   ),
-                );
-              },
+                ),
+            
+
+
+
+
+             Padding( 
+                  padding:EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  
+                  child: GestureDetector(
+                    onTap: _showBottomSheet,
+                    child: Container(
+                     
+                              height: 125,        
+                              decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 229, 235, 238),
+                              borderRadius: BorderRadius.circular(12),         
+                              ),
+                               child: Padding(
+                                 padding: const EdgeInsets.all(5.0),
+                                 child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text('12:00', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24, letterSpacing: 1.1),),
+                            ),
+                         
+                          ],
+                          ),
+                      ),
+                        
+                      VerticalDivider(width:1, color: Colors.black,endIndent: 5, indent: 5, ),
+                      SizedBox(width: 10,),
+                      Column( crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 7,),
+                          Text('Nurse appointment:', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),),
+                          SizedBox(height: 7,),
+                          Text('Nurse: Ayah Boudjedra', style: TextStyle(color: Colors.black,  fontSize: 15),),
+                          SizedBox(height: 7,),
+                          Text('Waiting', style: TextStyle(color: Colors.amber[700], fontWeight: FontWeight.bold, fontSize: 17),),
+                          SizedBox(height: 7,),
+                          Row(
+                          children: [
+                          Text(
+                          'Notes: none',
+                          style: TextStyle(
+                            
+                            fontSize: 15,
+                            color: Color.fromARGB(255, 0, 0, 0)
+                               ),
+                               ),
+                             
+                                   ],
+                            ),
+                                  
+                                  
+                        ],
+                      )
+                      
+                           ],
+                           ),
+                               ),
+                    ),
+                  ),
+                ),
+            
+
+
+             Padding( 
+                  padding:EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  
+                  child: GestureDetector(
+                    onTap: _showBottomSheet,
+                    child: Container(
+                     
+                              height: 125,        
+                              decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 229, 235, 238),
+                              borderRadius: BorderRadius.circular(12),         
+                              ),
+                               child: Padding(
+                                 padding: const EdgeInsets.all(5.0),
+                                 child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text('14:00', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24, letterSpacing: 1.1),),
+                            ),
+                         
+                          ],
+                          ),
+                      ),
+                        
+                      VerticalDivider(width:1, color: Colors.black,endIndent: 5, indent: 5, ),
+                      SizedBox(width: 10,),
+                      Column( crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 7,),
+                          Text('Cardiologist appointment:', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),),
+                          SizedBox(height: 7,),
+                          Text('Doctor: Fatima Zerhouni', style: TextStyle(color: Colors.black,  fontSize: 15),),
+                          SizedBox(height: 7,),
+                          Text('Waiting', style: TextStyle(color: Colors.amber[700], fontWeight: FontWeight.bold, fontSize: 17),),
+                          SizedBox(height: 7,),
+                          Row(
+                          children: [
+                          Text(
+                          'Notes: none',
+                          style: TextStyle(
+                            
+                            fontSize: 15,
+                            color: Color.fromARGB(255, 0, 0, 0)
+                               ),
+                               ),
+                             
+                                   ],
+                            ),
+                                  
+                                  
+                        ],
+                      )
+                      
+                           ],
+                           ),
+                               ),
+                    ),
+                  ),
+                ),
+            
+
+
+              ],
             ),
             
           ],

@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:intl/intl.dart';
 import 'package:get/get.dart';
-
-import 'package:get/get.dart';
 import '';
 import 'Task_sjedule/mybutton.dart';
 import 'Task_sjedule/pagemedcine.dart';
@@ -37,9 +35,9 @@ class _RemindersState extends State<Reminders> {
                 decoration: BoxDecoration(
                   border: Border.all(
                     width: 2,
-                    color: Colors.blue
+                    color: Color(0xFF61A4F1),
                   ),
-                  color: Colors.lightBlue,
+                  color:Color(0xFF398AE5), 
                   borderRadius: BorderRadius.circular(20),
                 ),
                 alignment: Alignment.center,

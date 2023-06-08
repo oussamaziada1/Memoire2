@@ -2,8 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import '../Patient/profile/profile.dart';
+import 'package:memoire/Doctor/profile_screen.dart';
 import '../widgets/circle_button.dart';
 import '../widgets/search_text_field.dart';
 import 'appointment1_screen.dart';
@@ -327,7 +326,7 @@ class Body extends StatelessWidget {
     GestureDetector(
       onTap: () {
         // Handle navigation for Category 4
-         Navigator.push(context,MaterialPageRoute(builder: (context) => ProfileScreen()));
+         Navigator.push(context,MaterialPageRoute(builder: (context) => ProfileScreen(),));
       },
       child: Container(
         decoration: BoxDecoration(

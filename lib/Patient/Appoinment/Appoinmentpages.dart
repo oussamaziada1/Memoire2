@@ -48,7 +48,7 @@ class _AppointmentPageState extends State<AppointmentPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Pick an Appointment",
+                "Book an Appointment",
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -56,15 +56,11 @@ class _AppointmentPageState extends State<AppointmentPage> {
                 ),
               ),
               Muinput(
-                title: "Your Name",
-                hint: "Enter your title ",
+                title: "Full Name",
+                hint: "Enter your full name",
                 controller: _titleController,
               ),
-              Muinput(
-                title: "Family member name",
-                hint: "Enter your note ",
-                controller: _noteController,
-              ),
+             
               Muinput(
                 title: "Date",
                 hint: DateFormat.yMd().format(_selectedDate),
@@ -115,7 +111,7 @@ class _AppointmentPageState extends State<AppointmentPage> {
               ),
               SizedBox(width: 12),
               Muinput(
-                title: "SpecialInstructions",
+                title: "Notes",
                 hint: "Enter your note ",
                 controller: _noteController,
               ),

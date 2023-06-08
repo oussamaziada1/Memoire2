@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import '../Driver/homepage.dart';
 import '../Patient/home.dart';
+import '../Patient/bottom_homepage.dart';
 import '../utilities/constants.dart';
 import 'homepage.dart';
 import 'signup_page.dart';
@@ -47,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
             } else if (value == 'farsiahmed@gmail.com') {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => HomeScreen()),
+                MaterialPageRoute(builder: (context) => Patient()),
               );
             } else if (value == 'joebeeb@gmail.com') {
               Navigator.push(

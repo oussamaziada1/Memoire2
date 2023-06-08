@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:memoire/Doctor/setting_ui.dart';
 
 import 'featured_screen.dart';
 import 'patient_list.dart';
@@ -18,7 +19,8 @@ class _MainHomePageState extends State<MainHomePage> {
   static const List<Widget> _widgetOptions = <Widget>[
     FeaturedScreen(),
     PatientList(),
-    ProfileScreen(),
+   
+    ProfileScreen(), SettingsUI(),
   ];
   
   @override
@@ -50,18 +52,18 @@ class _MainHomePageState extends State<MainHomePage> {
               icon: Icon(Icons.people_outlined, size: 27.0, ),
               label: 'Patients' ,             
               ),
-            // BottomNavigationBarItem(
-            //   activeIcon: Icon(Icons.settings, size: 27.0,),
-            //   icon: Icon(Icons.settings_outlined, size: 27.0,),
-            //   label: 'Settings' ,
-              
-            //   ),           
+                 
             BottomNavigationBarItem(
               activeIcon: Icon(Icons.person, size: 27.0,),
               icon: Icon(Icons.person_outline, size: 27.0,),
               label: 'Profile' ,
               
-              ),
+              ),BottomNavigationBarItem(
+              activeIcon: Icon(Icons.settings, size: 27.0,),
+              icon: Icon(Icons.settings_outlined, size: 27.0,),
+              label: 'Settings' ,
+              
+              ),      
           ],
           currentIndex: _selectedIndex,
           onTap: (int index) {

@@ -75,9 +75,8 @@ class CustomAppBar extends StatelessWidget {
                   },
                 ),
 
-              
+              SizedBox(width: 45,),
               Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
@@ -109,15 +108,15 @@ class SpecialistItem {
 
 class Body extends StatelessWidget {
   final List<SpecialistItem> specialistItems = [
-    SpecialistItem(text: "Dentist", imagePath: "assets/tooth.png"),
-    SpecialistItem(text: "Cardiologist", imagePath: "assets/002.png"),
-    SpecialistItem(text: "Allergology", imagePath: "assets/allarg2.png"),
-    SpecialistItem(text: "Dermatologist", imagePath: "assets/sk2.png"),
-    SpecialistItem(text: "Covid-19Consul", imagePath: "assets/corona.png"),
-    SpecialistItem(text: "Ophthalmologist", imagePath: "assets/dar.png"),
-    SpecialistItem(text: "Pediatrician", imagePath: "assets/b.png"),
-    SpecialistItem(text: "Nursing", imagePath: "assets/nu.png"),
-    SpecialistItem(text: "Book Ambulace", imagePath: "assets/bilance.png"),
+    SpecialistItem(text: "Dentist", imagePath: "assets/wisdom-tooth.png"),
+    SpecialistItem(text: "Cardiologist", imagePath: "assets/heart-rate.png"),
+    SpecialistItem(text: "Allergologist", imagePath: "assets/allergies.png"),
+    SpecialistItem(text: "Dermatologist", imagePath: "assets/stop.png"),
+    SpecialistItem(text: "Covid-19", imagePath: "assets/virus.png"),
+    SpecialistItem(text: "Ophthalmologist", imagePath: "assets/eye.png"),
+    SpecialistItem(text: "Pediatrician", imagePath: "assets/baby-boy.png"),
+    SpecialistItem(text: "Nurse", imagePath: "assets/nurse.png"),
+
     
     
   ];
@@ -178,7 +177,7 @@ class Body extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                             child: Container(
                               decoration: const BoxDecoration(
-                                color: Colors.blue,
+                                color: Color(0xFF398AE5),
                               ),
                               width: double.infinity, // Set the width to fill the entire grid cell
                               child: Column(
@@ -218,7 +217,7 @@ class Body extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20),
                             child: Container(
                               decoration: const BoxDecoration(
-                                color: Colors.blue,
+                                color:  Color(0xFF478FE0),
                               ),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -230,7 +229,7 @@ class Body extends StatelessWidget {
                                   ),
                                   Text(
                                     item.text,
-                                    style: const TextStyle(fontSize: 20),
+                                    style: const TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),

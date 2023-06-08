@@ -22,6 +22,7 @@ dependencies:
   flutter_pw_validator: ^1.6.0
   calendar_timeline: ^1.1.2
   url_launcher: ^6.1.11
+  settings_ui: ^2.0.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
